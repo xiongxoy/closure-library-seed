@@ -1,0 +1,16 @@
+{
+  "name": "google-closure",
+  "version": "0.0.0",
+  "ignore": [
+    "test/"
+  ],
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "jquery": "~1.9.1",
+    "mocha": "~2.2.1",
+    "chai": "~2.2.0"
+  },
+  "devDependencies": {
+    "closure-helpers": "~0.0.2"
+  }
+}
