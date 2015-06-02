@@ -73,7 +73,8 @@ module.exports = function (grunt) {
           livereload: true
         },
         files: [
-          CONF.appPath + '/**/*.js'
+          CONF.entryPoint + '/**/*.js',
+          CONF.entryPoint + '/**/*.html'
         ],
       },
       test: {
@@ -81,9 +82,26 @@ module.exports = function (grunt) {
           livereload: true
         },
         files: [
-          CONF.appPath + '/**/*.js',
+          CONF.entryPoint + '/**/*.js',
           'test/**/*.js'
         ],
+      }
+    },
+    browserSync: {
+      default_options: {
+        bsFiles: {
+          src: [
+            CONF.entryPoint + '/**/*.html',
+            CONF.entryPoint + '/**/*.css',
+            CONF.entryPoint + '/**/*.js'
+          ]
+        },
+        options: {
+          watchTask: true,
+          server: {
+            baseDir: CONF.entryPoint
+          }
+        }
       }
     },
     connect: {
@@ -325,7 +343,8 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'connect:app',
-      'open:server',
+      //'open:server',
+      'browserSync',
       'watch:livereload'
     ]);
   });

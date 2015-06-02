@@ -156,7 +156,7 @@ app.Core.prototype.trigger = function( event ) {
 /**
  * Remove a listener.
  *
- * @param  {goog.events.ListenableKey } key The key from listen().
+ * @param  {goog.events.ListenableKey} key The key from listen().
  * @return {boolean} indicating whether the listener was there to remove.
  */
 app.Core.prototype.removeListener = function( key ) {
