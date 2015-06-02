@@ -11,6 +11,8 @@ goog.require('ssd.helpers');
 goog.require('app.ui.Debug');
 goog.require('ssd.invocator');
 
+goog.require('tutorial.notepad.init');
+
 /**
  * The base class
  *
@@ -51,6 +53,8 @@ app.Core = function() {
   var selfObj = ssd.invocator.encapsulate( this, this.init );
 
   this.debugShow = new app.ui.Debug();
+  tutorial.notepad.init();
+  console.log("Me to");
 
   return selfObj;
 };
@@ -102,7 +106,6 @@ app.Core.prototype.init = function( optCallback ) {
     cb();
     return this._readyDefer.promise;
   }
-
 
   this.debugShow.init();
 

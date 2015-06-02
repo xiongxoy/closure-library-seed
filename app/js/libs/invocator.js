@@ -47,7 +47,7 @@ ssd.invocator = function(ParentCtor, methodName ) {
  * @param  {Function} method  The instance's method we want to attach.
  * @return {Function} The result.
  */
-ssd.invocator.encapsulate = function(selfObj, method ) {
+ssd.invocator.encapsulate = function(selfObj, method) {
 
   // create the capsule and assign the target method binded
   // to the selfObject
