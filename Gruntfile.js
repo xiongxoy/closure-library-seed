@@ -68,23 +68,25 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     watch: {
-      livereload: {
+      deps: {
         options: {
           livereload: true
         },
+        tasks: ['deps'],
         files: [
-          CONF.entryPoint + '/**/*.js',
-          CONF.entryPoint + '/**/*.html'
-        ],
+          CONF.appPath + '/**/*.js',
+          'test/**/*.js',
+        ]
       },
       test: {
         options: {
           livereload: true
         },
+        tasks: ['test'],
         files: [
-          CONF.entryPoint + '/**/*.js',
-          'test/**/*.js'
-        ],
+          CONF.appPath + '/**/*.js',
+          'test/**/*.js',
+        ]
       }
     },
     browserSync: {
@@ -98,6 +100,7 @@ module.exports = function (grunt) {
         },
         options: {
           watchTask: true,
+          reloadDelay: 1000, // wait for deps task to complete.
           server: {
             baseDir: CONF.entryPoint
           }
@@ -336,7 +339,7 @@ module.exports = function (grunt) {
         'clean:server',
         'connect:test',
         'open:test',
-        'watch:test'
+        'watch'
       ]);
     }
 
@@ -345,7 +348,8 @@ module.exports = function (grunt) {
       'connect:app',
       //'open:server',
       'browserSync',
-      'watch:livereload'
+      //'watch:livereload'
+      'watch'
     ]);
   });
 
