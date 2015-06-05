@@ -69,9 +69,6 @@ module.exports = function (grunt) {
   grunt.initConfig({
     watch: {
       deps: {
-        options: {
-          livereload: true
-        },
         tasks: ['deps'],
         files: [
           CONF.appPath + '/**/*.js',
@@ -79,9 +76,6 @@ module.exports = function (grunt) {
         ]
       },
       test: {
-        options: {
-          livereload: true
-        },
         tasks: ['test'],
         files: [
           CONF.appPath + '/**/*.js',
@@ -225,7 +219,6 @@ module.exports = function (grunt) {
           create_source_map: CONF.sourceMap,
           source_map_format: 'V3',
           output_wrapper: CONF.outputWrapper
-
         }
       },
       app: {

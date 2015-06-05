@@ -3,7 +3,6 @@
 goog.provide('tutorial.notepad.Note');
 goog.provide('tutorial.notepad.init');
 
-
 goog.require('goog.dom');
 goog.require('goog.ui.Zippy');
 
@@ -73,7 +72,5 @@ tutorial.notepad.Note.prototype.makeNoteDom = function() {
   goog.dom.appendChild(this.parent, newNote);
   return new goog.ui.Zippy(this.headerElement, this.contentElement);
 };
-
-
 
 

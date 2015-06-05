@@ -12,6 +12,8 @@ goog.require('app.ui.Debug');
 goog.require('ssd.invocator');
 
 goog.require('tutorial.notepad.init');
+//goog.require('example.Checklist.init');
+
 
 /**
  * The base class
@@ -50,13 +52,24 @@ app.Core = function() {
   // Run encapsulator before the other classes initialize
   // because the encapsulator does a shallow copy of the object.
   //
+  //
+
   var selfObj = ssd.invocator.encapsulate( this, this.init );
 
   this.debugShow = new app.ui.Debug();
+
   tutorial.notepad.init();
-  console.log("Me to");
+  //initialize_components(this);
 
   return selfObj;
+
+  /**
+   * Initialize all components.
+   * Add your own components here.
+   */
+  function initialize_components(target) {
+    example.Checklist.init();
+  }
 };
 goog.inherits(app.Core, app.Module);
 

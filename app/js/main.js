@@ -15,3 +15,9 @@ goog.require('app.exports');
 goog.require('tutorial.notepad.init');
 goog.require('tutorial.notepad.Note');
 
+// checklist example
+//goog.require('example.Checklist');
+//goog.require('example.ui.Checklist');
+
+
+
