@@ -26,7 +26,6 @@ tutorial.notepad.makeNotes = function(data, noteContainer) {
   return notes;
 };
 
-
 /**
  * Entry point, init notepad in dom.
  */

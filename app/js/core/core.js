@@ -12,8 +12,7 @@ goog.require('app.ui.Debug');
 goog.require('ssd.invocator');
 
 goog.require('tutorial.notepad.init');
-//goog.require('example.Checklist.init');
-
+goog.require('example.Checklist.init');
 
 /**
  * The base class
@@ -58,9 +57,6 @@ app.Core = function() {
 
   this.debugShow = new app.ui.Debug();
 
-  tutorial.notepad.init();
-  //initialize_components(this);
-
   return selfObj;
 
   /**
@@ -68,6 +64,8 @@ app.Core = function() {
    * Add your own components here.
    */
   function initialize_components(target) {
+    target.debugShow = new app.ui.Debug();
+    tutorial.notepad.init();
     example.Checklist.init();
   }
 };
@@ -121,6 +119,7 @@ app.Core.prototype.init = function( optCallback ) {
   }
 
   this.debugShow.init();
+
 
   this._isReady = true;
 
@@ -182,9 +181,14 @@ app.Core.prototype.removeListener = function( key ) {
 /**
  * Synchronous (silent) initialization of the library.
  *
- *
  */
 appOne = app.Core.getInstance();
+
+// if not on testing environment, init widgets
+if (!window['TESTING']) {
+  tutorial.notepad.init();
+  example.Checklist.init();
+}
 
 // if not on testing environment initialize the app
 if (!window['TESTING']) {
