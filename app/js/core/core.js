@@ -48,6 +48,8 @@ app.Core = function() {
   // Run encapsulator before the other classes initialize
   // because the encapsulator does a shallow copy of the object.
   //
+  //
+
   var selfObj = ssd.invocator.encapsulate( this, this.init );
 
   this.debugShow = new app.ui.Debug();
@@ -103,8 +105,8 @@ app.Core.prototype.init = function( optCallback ) {
     return this._readyDefer.promise;
   }
 
-
   this.debugShow.init();
+
 
   this._isReady = true;
 
@@ -156,7 +158,7 @@ app.Core.prototype.trigger = function( event ) {
 /**
  * Remove a listener.
  *
- * @param  {goog.events.ListenableKey } key The key from listen().
+ * @param  {goog.events.ListenableKey} key The key from listen().
  * @return {boolean} indicating whether the listener was there to remove.
  */
 app.Core.prototype.removeListener = function( key ) {
@@ -166,9 +168,17 @@ app.Core.prototype.removeListener = function( key ) {
 /**
  * Synchronous (silent) initialization of the library.
  *
- *
  */
 appOne = app.Core.getInstance();
+
+// if not on testing environment, init widgets
+if (!window['TESTING']) {
+  goog.require('tutorial.notepad.init');
+  goog.require('example.Checklist.init');
+
+  tutorial.notepad.init();
+  example.Checklist.init();
+}
 
 // if not on testing environment initialize the app
 if (!window['TESTING']) {

@@ -1,6 +1,7 @@
 # google closure
 
 An application made with [Closure Library][closure-library].
+This application is generated with [Closure Library Generator][closure-library-generator].
 
 ## Getting Started
 
@@ -26,7 +27,7 @@ npm install google-closure --save-dev
   - Big Bang
 
 ## License
-Copyright (c) 2015 ME PRETTY
+Copyright (c) 2015 Zhou Xiong
 Licensed under the [MIT](LICENSE-MIT).
 
 <sup>[↑ Back to TOC](#table-of-contents)</sup>
@@ -39,3 +40,4 @@ Licensed under the [MIT](LICENSE-MIT).
 [Gruntfile]: https://github.com/gruntjs/grunt/wiki/Sample-Gruntfile "Grunt's Gruntfile.js"
 [yeoman]: http://yeoman.io/ "yeoman Modern Workflows for Modern Webapps"
 [bower]:http://twitter.github.com/bower/ "THE BROWSER PACKAGE MANAGER html, css, and javascript"
+[closure-libraray-generator]: https://github.com/thanpolas/generator-closure "generate seed closure app"

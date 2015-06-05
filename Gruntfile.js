@@ -68,22 +68,37 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     watch: {
-      livereload: {
-        options: {
-          livereload: true
-        },
-        files: [
-          CONF.appPath + '/**/*.js'
-        ],
-      },
-      test: {
-        options: {
-          livereload: true
-        },
+      deps: {
+        tasks: ['deps'],
         files: [
           CONF.appPath + '/**/*.js',
-          'test/**/*.js'
-        ],
+          'test/**/*.js',
+        ]
+      },
+      test: {
+        tasks: ['test'],
+        files: [
+          CONF.appPath + '/**/*.js',
+          'test/**/*.js',
+        ]
+      }
+    },
+    browserSync: {
+      default_options: {
+        bsFiles: {
+          src: [
+            CONF.entryPoint + '/**/*.html',
+            CONF.entryPoint + '/**/*.css',
+            CONF.entryPoint + '/**/*.js'
+          ]
+        },
+        options: {
+          watchTask: true,
+          reloadDelay: 1000, // wait for deps task to complete.
+          server: {
+            baseDir: CONF.entryPoint
+          }
+        }
       }
     },
     connect: {
@@ -204,7 +219,6 @@ module.exports = function (grunt) {
           create_source_map: CONF.sourceMap,
           source_map_format: 'V3',
           output_wrapper: CONF.outputWrapper
-
         }
       },
       app: {
@@ -318,15 +332,17 @@ module.exports = function (grunt) {
         'clean:server',
         'connect:test',
         'open:test',
-        'watch:test'
+        'watch'
       ]);
     }
 
     grunt.task.run([
       'clean:server',
       'connect:app',
-      'open:server',
-      'watch:livereload'
+      //'open:server',
+      'browserSync',
+      //'watch:livereload'
+      'watch'
     ]);
   });
 

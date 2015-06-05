@@ -42,7 +42,6 @@
       } else {
         document.write('<a href="/test/?unit=1">Unit Tests</a> | ');
         document.write('<a href="' + anchorBdd.href + '">' + anchorBdd.value + '<\/a>');
-
       }
 
     })();
@@ -53,7 +52,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
         window.jQuery || document.write(
-            '<script src="app/components/jquery/jquery.js"><\/script>')
+            '<script src="..\/app\/components\/jquery\/jquery.js"><\/script>')
     </script>
     <script>
         if (!window.jQuery) {
@@ -72,13 +71,13 @@
             if (IS_COMPILED) {
 
                 document.write(
-                    "<script src='..\/app\/jsc\/app.js'><\/script>");
+                    "<script src='..\/app\/jsc\/app.js'><\/script>"
+                );
                 document.write(
                     '<script src="..\/app\/closure-library\/closure\/goog\/base.js"><\/script>'
                 );
 
-            }
-            else {
+            } else {
 
                 document.write(
                     '<script src="..\/app\/closure-library\/closure\/goog\/base.js"><\/script>'
@@ -88,7 +87,6 @@
                 document.write('<script>goog.DEBUG = DEBUG;<\/script>');
                 document.write(
                     '<script src="..\/app\/js\/main.js"><\/script>');
-
 
             }
 

@@ -40,6 +40,7 @@ goog.inherits(app.ui.Debug, app.Module);
  * Initialize ui
  */
 app.ui.Debug.prototype.init = function() {
+
   this.$output = $('#output');
   this.$btnShowDebug = $('#showdebug');
   this.$openDebug = $('#openFancyWindow');
@@ -54,6 +55,7 @@ app.ui.Debug.prototype.init = function() {
  * @private
  */
 app.ui.Debug.prototype._onClick = function(ev) {
+  console.log("clicked !");
   ev.preventDefault();
   var showdebug = new app.Showdebug();
   this.$output.append('Clicked Log<br>');
