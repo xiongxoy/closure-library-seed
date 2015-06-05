@@ -1,7 +1,13 @@
-# google closure
+# Closure Library Demos
 
-An application made with [Closure Library][closure-library].
-This application is generated with [Closure Library Generator][closure-library-generator].
+An application made with [Closure Library][closure-library], generated with [Closure Library Generator][closure-library-generator].
+
+The [Closure Library Generator][closure-library-generator] is currently unmaintained.
+I spent some time to make things work again.
+The the closure compiler in node package is broken. I updated some flags and it's working again.
+
+I added browser-sync to the development cycle to replace grunt livereload.
+It can inform the browser to reload the page when watched files have changed.
 
 ## Getting Started
 
@@ -15,8 +21,6 @@ npm install google-closure --save-dev
 * About
   - [Release History](#release-history)
   - [License](#license)
-
-
 
 
 
@@ -40,4 +44,4 @@ Licensed under the [MIT](LICENSE-MIT).
 [Gruntfile]: https://github.com/gruntjs/grunt/wiki/Sample-Gruntfile "Grunt's Gruntfile.js"
 [yeoman]: http://yeoman.io/ "yeoman Modern Workflows for Modern Webapps"
 [bower]:http://twitter.github.com/bower/ "THE BROWSER PACKAGE MANAGER html, css, and javascript"
-[closure-libraray-generator]: https://github.com/thanpolas/generator-closure "generate seed closure app"
+[closure-library-generator]: https://github.com/thanpolas/generator-closure "generate seed closure app"
