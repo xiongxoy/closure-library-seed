@@ -27,7 +27,7 @@ npm install google-closure --save-dev
   - Big Bang
 
 ## License
-Copyright (c) 2015 ME PRETTY
+Copyright (c) 2015 Zhou Xiong
 Licensed under the [MIT](LICENSE-MIT).
 
 <sup>[↑ Back to TOC](#table-of-contents)</sup>
