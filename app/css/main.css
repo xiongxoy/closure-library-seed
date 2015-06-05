@@ -1,0 +1,11 @@
+.sample-section {
+  margin: 30px auto;
+}
+
+.example-checklist-item-checked {
+  text-decoration: line-through;
+  color: #777;
+}
+
+
+
