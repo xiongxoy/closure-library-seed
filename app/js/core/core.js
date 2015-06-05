@@ -11,9 +11,6 @@ goog.require('ssd.helpers');
 goog.require('app.ui.Debug');
 goog.require('ssd.invocator');
 
-goog.require('tutorial.notepad.init');
-goog.require('example.Checklist.init');
-
 /**
  * The base class
  *
@@ -58,16 +55,6 @@ app.Core = function() {
   this.debugShow = new app.ui.Debug();
 
   return selfObj;
-
-  /**
-   * Initialize all components.
-   * Add your own components here.
-   */
-  function initialize_components(target) {
-    target.debugShow = new app.ui.Debug();
-    tutorial.notepad.init();
-    example.Checklist.init();
-  }
 };
 goog.inherits(app.Core, app.Module);
 
@@ -186,6 +173,9 @@ appOne = app.Core.getInstance();
 
 // if not on testing environment, init widgets
 if (!window['TESTING']) {
+  goog.require('tutorial.notepad.init');
+  goog.require('example.Checklist.init');
+
   tutorial.notepad.init();
   example.Checklist.init();
 }
