@@ -2,18 +2,14 @@
 
 An application made with [Closure Library](closure-library), generated with [Closure Library Generator](closure-library-generator).
 
-The [Closure Library Generator](closure-library-generator) is currently unmaintained.
-I spent some time to make things work again.
-The the closure compiler in node package is broken. 
-
-
+The [Closure Library Generator](closure-library-generator) is currently unmaintained. I spent some time to make things work again.
 
 Use [Browsersync](browsersync) to replace Grunt livereload.
 It can inform the browser to reload the page when watched files have changed.
 
 ## Getting Started
 
-### Start server 
+### Start server
 
 ```shell
  	grunt server
@@ -29,13 +25,13 @@ It can inform the browser to reload the page when watched files have changed.
 	grunt test
 ```
 
-### Update dependency 
+### Update dependency
 ```shell
 	grunt deps
 ```
 
-### Run Closure Compiler 
-Closure Compiler will build a compressed version of javascript. 
+### Run Closure Compiler
+Closure Compiler will build a compressed version of javascript.
 All javascript will be in **app.js**.
 
 ```shell
@@ -44,14 +40,14 @@ All javascript will be in **app.js**.
 
 ### Other tasks
 
-See **Gruntfile.js** for other tasks. 
+See **Gruntfile.js** for other tasks.
 
 
 ## Creating Modular
 
 The project folder is structured for modular javascript development. Follow the following steps to create new modulars.
 
-1. Create new javascript modular in **app/js/app** folder 
+1. Create new javascript modular in **app/js/app** folder
 2. Use **goog.provide()** and **goog.require()** to specify dependency.
 3. Require modular in **main.js** for use in the browser or testing.
 4. Call initialization code in **app/js/core.js**, but the code should be implemented in the **app/js/app**.
