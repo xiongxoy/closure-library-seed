@@ -1,25 +1,41 @@
 @import url('normalize.css');
 @import url('checkbox.css');
 
-.sample-section {
-  margin: 30px auto;
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.closure-demo {
+  margin: 50px auto;
+  background-color: rgba(255, 153, 51, 0.55);
+  padding: 10px 10px 30px 10px;
+}
+
+#notes {
+  width: 480px;
 }
 
 .example-checklist-item-checked {
   text-decoration: line-through;
-  color: #777;
+  color: rgb(100, 100, 100);
 }
 
 h1 {
   text-align: center;
 }
 
-.closure-demo header {
-  text-align: center;
+body {
+  background-image: url(../images/photo.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Roboto', sans-serif;
 }
 
-.container {
-  width: 960px;
-  margin: 0 auto;
+.goog-checkbox {
+  vertical-align: middle;
 }
+
+
 
